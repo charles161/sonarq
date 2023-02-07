@@ -1,7 +1,6 @@
-module.exports.index = async function (req, res) {
-    const value = req.query.value;
+const fs = require('fs');
 
-    res.setHeader("Set-Cookie", value); 
-    res.cookie("connect.sid", value); 
-
-};
+function (req, res) {
+ const reqPath = __dirname + req.query.filename;
+ let data = fs.readFileSync(reqPath, { encoding: 'utf8', flag: 'r' });
+}
